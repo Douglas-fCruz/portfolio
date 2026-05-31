@@ -69,37 +69,3 @@ link.classList.add("active");
 });
 //
 
-// SETA
-
-const radios = [
-    document.getElementById("radio1"),
-    document.getElementById("radio2"),
-    document.getElementById("radio3")
-];
-
-let current = 0;
-
-
-radios[current].checked = true;
-
-document.querySelector(".seta-linha.next").addEventListener("click", () => {
-    current++;
-
-    if (current >= radios.length) {
-        current = 0; 
-    }
-
-    radios[current].checked = true;
-});
-
-document.querySelector(".seta-linha.prev").addEventListener("click", () => {
-    current--;
-
-    if (current < 0) {
-        current = radios.length - 1; 
-    }
-
-    radios[current].checked = true;
-});
-
-// 
