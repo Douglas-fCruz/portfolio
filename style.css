@@ -190,12 +190,12 @@ body::after{
 
 .topoinicial{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-self: center;
     padding: 60px 0px 60px 0px;
     width: 100%;
     max-width: 1100px;
-    height: 100%;
+    height: auto;
 }
 
 .home-header {
@@ -340,8 +340,10 @@ body::after{
 
 .fotovermelha{
     position: relative;
-    width: 500px;
-    height: 700px;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    max-height: 700px;
     padding: 0px;
     object-fit: cover;
     transition: 0.6s ease;
@@ -351,10 +353,11 @@ body::after{
 }
 
 .fotoinicial{
-    display: flex;
     position: relative;
-    width: 500px;
-    height: 700px;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    max-height: 700px;
     padding: 0px;
     object-fit: cover;
     transition: 0.6s ease;
@@ -438,7 +441,8 @@ body::after{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 1100px;
+    min-height: 1100px;
+    height: auto;
     padding: 60px 0px 60px 0px;
 }
 
@@ -463,7 +467,7 @@ body::after{
 
 .flash-skills{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     width:100%;
     max-width:1100px;
     height: 100%;
@@ -475,12 +479,11 @@ body::after{
 .flash-card {
     display: flex;
     justify-self: center;
-    width: 100%;
-    max-width: 300px;
-    height: 100%;
-    max-height: 400px;
+    width:100%;
+    max-width:400px;
+    min-height:320px;
+    height:auto;
     border-radius:14px;
-    overflow:hidden;
     transition:0.35s ease;
 }
 
@@ -518,18 +521,21 @@ body::after{
     align-items: center;
     padding: 25px 0px 0px 0px;
     width: 100%;
-    height: 100%;     
+    height: auto;     
 }
 
 .circle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    width: 100%;
-    max-width: 60px;
-    height: 100%;
-    max-height: 60px;   
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:60px;
+    height:60px;
+    padding: 10px;
+
+    border-radius:50%;
+    flex-shrink:0;
+    height: auto;
 }
 
 .html-tag{
@@ -569,10 +575,9 @@ body::after{
 }
 
 .hardiconn{
-    width: 100%;
-    height: 100%;
-    max-width: 40px;
-    max-height: 40px;
+    width:32px;
+    height:32px;
+    object-fit:contain;
 }
 
 .skill-name{
@@ -647,17 +652,19 @@ body::after{
 /* CERTIFICADOS SLIDE*/
 
 .slide{
-    padding: 60px 0px 60px 0px;
+    min-height: auto;
+    height: auto;
 }
 
 .cert-slides{
     display: grid;
     justify-items: center;
     justify-self: center;
-    grid-template-columns: repeat(3,6fr);
-    width: 75%;
-    height: 100%;
-    max-height: 600px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    width: 100%;
+    max-width: 1100px;
+    height:auto;
     
 }
 
@@ -732,14 +739,13 @@ body::after{
     max-width:1000px;
     margin:40px auto;
     gap:2rem;
-    grid-template-columns:repeat(auto-fit,minmax(300px,300px));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 }
 
 .project-card{
     background: rgb(32,32,32);
     border:1px solid rgb(48,48,48);
     border-radius:14px;
-    overflow:hidden;
     transition:0.35s ease;
     display:flex;
     flex-direction:column;
@@ -904,9 +910,9 @@ body::after{
 /* FIM PROJETOS */
 
 .contacts-box{
-    margin:10% auto 8% auto;
+    margin:80px auto;
+    padding:40px 20px;
     text-align:center;
-    margin-bottom:5%;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -1131,4 +1137,52 @@ body.white .contacts-text {
 .triller.white .dkcursor {
     left: 25px;
     background-color: #FAFAFA;
+}
+
+
+
+@media (max-width: 768px){
+
+    .topoinicial{
+        grid-template-columns:1fr;
+        padding:40px 20px;
+    }
+
+    .home-header{
+        text-align:center;
+    }
+
+    .myname{
+        font-size:42px;
+    }
+
+    .flash-skills{
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    }
+
+    .cert-slides{
+        grid-template-columns:1fr;
+    }
+
+    .fotovermelha,
+    .fotoinicial{
+        width:100%;
+        max-width:350px;
+        height:auto;
+        justify-self:center;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        gap:1rem;
+    }
+
+     .background-skill{
+        font-size:14px;
+    }
+
+    .project-box{
+        grid-template-columns:1fr;
+        padding:0 15px;
+    }
 }
