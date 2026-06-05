@@ -852,6 +852,15 @@ body::after{
     justify-content:center;
 }
 
+.cert-text{
+    text-align: center;
+    background: -webkit-linear-gradient(rgb(255, 0, 179), rgb(255, 0, 98));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+    transition: 0.6s ease;
+}
+
 .cert-div{
     width:100%;
     max-width:1100px;
