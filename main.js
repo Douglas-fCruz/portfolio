@@ -69,3 +69,40 @@ link.classList.add("active");
 });
 //
 
+// abrir cert
+
+const buttons = document.querySelectorAll(".cert-open");
+
+const modal = document.getElementById("certModal");
+const modalImage = document.getElementById("modalImage");
+const closeModal = document.querySelector(".close-modal");
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const imageSrc = button.dataset.img;
+
+        modalImage.src = imageSrc;
+
+        modal.classList.add("active");
+
+    });
+
+});
+
+closeModal.addEventListener("click", () => {
+
+    modal.classList.remove("active");
+
+});
+
+modal.addEventListener("click", (e) => {
+
+    if(e.target === modal){
+
+        modal.classList.remove("active");
+
+    }
+
+});
