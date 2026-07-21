@@ -106,3 +106,18 @@ modal.addEventListener("click", (e) => {
     }
 
 });
+
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    menu.classList.toggle("active");
+});
+
+document.querySelectorAll(".menu-links").forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        hamburger.classList.remove("active");
+    });
+});
